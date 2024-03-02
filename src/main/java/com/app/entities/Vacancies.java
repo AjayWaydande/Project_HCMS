@@ -18,7 +18,7 @@ public class Vacancies {
 	private int vacancyId;
 
 	@ManyToOne
-	@JoinColumn(name = "department_id")
+	@JoinColumn(name ="department_id")
 	private Department department;
 
 	@Column(length = 20)

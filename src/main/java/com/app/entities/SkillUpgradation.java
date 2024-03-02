@@ -24,7 +24,7 @@ public class SkillUpgradation {
 	private int upgradationId;
 
 	@ManyToOne
-	@JoinColumn(name = "employee_id")
+	@JoinColumn(name ="employee_id")
 	private Employee employee;
 
 	@Column(length = 30)
@@ -41,7 +41,7 @@ public class SkillUpgradation {
 	private LocalDate upgradationDate;
 
 	@ManyToOne
-	@JoinColumn(name = "upgraded_by")
+	@JoinColumn(name ="upgraded_by")
 	private Employee upgradedBy;
 
 	public SkillUpgradation() {

@@ -10,7 +10,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "employee_managers")
+@Table(name ="employee_managers")
 public class EmployeeManagers {
 	
 	@Id
@@ -21,9 +21,11 @@ public class EmployeeManagers {
 	@JoinColumn(name = "employee_id")
 	private Employee employee;
 
-	@ManyToOne
-	@JoinColumn(name = "manager_id")
-	private Employee manager;
+//	@ManyToOne
+//	@JoinColumn(name = "manager_id")
+	@Column(length = 30)
+
+	private String manager;
 
 	@Column(length = 30)
 	private String relationshipType;
@@ -33,7 +35,7 @@ public class EmployeeManagers {
 		// TODO Auto-generated constructor stub
 	}
 
-	public EmployeeManagers(int relationshipId, Employee employee, Employee manager, String relationshipType) {
+	public EmployeeManagers(int relationshipId, Employee employee, String manager, String relationshipType) {
 		super();
 		this.relationshipId = relationshipId;
 		this.employee = employee;
@@ -57,11 +59,11 @@ public class EmployeeManagers {
 		this.employee = employee;
 	}
 
-	public Employee getManager() {
+	public String getManager() {
 		return manager;
 	}
 
-	public void setManager(Employee manager) {
+	public void setManager(String manager) {
 		this.manager = manager;
 	}
 

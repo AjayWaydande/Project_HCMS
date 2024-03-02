@@ -17,7 +17,7 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name = "employees")
+@Table(name ="employees")
 public class Employee {
 
 	@Id
@@ -33,6 +33,8 @@ public class Employee {
 	@Column(length = 30)
 	private String gender;
 	
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(length = 30)
 	private LocalDate dateOfBirth;
 	
@@ -40,7 +42,7 @@ public class Employee {
 	private String email;
 	
 	@Column(length = 30)
-	private String mobileNumber;
+	private String phone;
 	
 	@Column(length = 200)
 	private String address;
@@ -50,6 +52,9 @@ public class Employee {
 	
 	@Column(length = 20)
 	private String maritalStatus;
+	
+	@Column(length = 20)
+	private String emergencyContactName;
 	
 	@Column(length = 30)
 	private String emergencyContactNumber;
@@ -94,11 +99,13 @@ public class Employee {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+
 	public Employee(int employeeId, String firstName, String lastName, String gender, LocalDate dateOfBirth,
-			String email, String mobileNumber, String address, int nationalId, String maritalStatus,
-			String emergencyContactNumber, Department department, String postion, String skillset,
-			LocalDate employmentStartDate, LocalDate employmentEndDate, double salary, String employmentStatus,
-			int bankAccountNumber, Employee manager, Role role) {
+			String email, String phone, String address, int nationalId, String maritalStatus,
+			String emergencyContactName, String emergencyContactNumber, Department department, String postion,
+			String skillset, LocalDate employmentStartDate, LocalDate employmentEndDate, double salary,
+			String employmentStatus, int bankAccountNumber, Employee manager, Role role) {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
@@ -106,10 +113,11 @@ public class Employee {
 		this.gender = gender;
 		this.dateOfBirth = dateOfBirth;
 		this.email = email;
-		this.mobileNumber = mobileNumber;
+		this.phone = phone;
 		this.address = address;
 		this.nationalId = nationalId;
 		this.maritalStatus = maritalStatus;
+		this.emergencyContactName = emergencyContactName;
 		this.emergencyContactNumber = emergencyContactNumber;
 		this.department = department;
 		this.postion = postion;
@@ -122,6 +130,17 @@ public class Employee {
 		this.manager = manager;
 		this.role = role;
 	}
+
+
+
+	public Employee(int i, String string, String string2, String string3, LocalDate localDate, String string4,
+			String string5, String string6, int j, String string7, String string8, String string9,
+			Object setDepartmentName, Object setRoleName, String string10, LocalDate localDate2, LocalDate localDate3,
+			int k, String string11, int l, Object object, String string12) {
+		// TODO Auto-generated constructor stub
+	}
+
+
 
 	public int getEmployeeId() {
 		return employeeId;
@@ -171,12 +190,22 @@ public class Employee {
 		this.email = email;
 	}
 
-	public String getMobileNumber() {
-		return mobileNumber;
+	
+
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setMobileNumber(String mobileNumber) {
-		this.mobileNumber = mobileNumber;
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getEmergencyContactName() {
+		return emergencyContactName;
+	}
+
+	public void setEmergencyContactName(String emergencyContactName) {
+		this.emergencyContactName = emergencyContactName;
 	}
 
 	public String getAddress() {
@@ -291,17 +320,21 @@ public class Employee {
 		this.role = role;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + ", email=" + email + ", mobileNumber="
-				+ mobileNumber + ", address=" + address + ", nationalId=" + nationalId + ", maritalStatus="
-				+ maritalStatus + ", emergencyContactNumber=" + emergencyContactNumber + ", department=" + department
-				+ ", postion=" + postion + ", skillset=" + skillset + ", employmentStartDate=" + employmentStartDate
-				+ ", employmentEndDate=" + employmentEndDate + ", salary=" + salary + ", employmentStatus="
-				+ employmentStatus + ", bankAccountNumber=" + bankAccountNumber + ", manager=" + manager + ", role="
-				+ role + "]";
+				+ ", gender=" + gender + ", dateOfBirth=" + dateOfBirth + ", email=" + email + ", phone=" + phone
+				+ ", address=" + address + ", nationalId=" + nationalId + ", maritalStatus=" + maritalStatus
+				+ ", emergencyContactName=" + emergencyContactName + ", emergencyContactNumber="
+				+ emergencyContactNumber + ", department=" + department + ", postion=" + postion + ", skillset="
+				+ skillset + ", employmentStartDate=" + employmentStartDate + ", employmentEndDate=" + employmentEndDate
+				+ ", salary=" + salary + ", employmentStatus=" + employmentStatus + ", bankAccountNumber="
+				+ bankAccountNumber + ", manager=" + manager + ", role=" + role + "]";
 	}
+
+	
 	
 	
 	

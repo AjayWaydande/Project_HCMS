@@ -24,7 +24,7 @@ public class ApplicationStatus {
 	private int applicationId;
 
 	@ManyToOne
-	@JoinColumn(name = "candidate_id")
+	@JoinColumn(name ="candidate_id")
 	private CandidateProfiles candidate;
 
 	@ManyToOne

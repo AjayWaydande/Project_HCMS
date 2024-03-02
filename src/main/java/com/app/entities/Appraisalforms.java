@@ -16,19 +16,19 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name="appraisal_form")
+@Table(name="appraisal_forms")
 public class Appraisalforms {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String formId;
+	private int formId;
 	
 	@ManyToOne
 	@JoinColumn(name ="employee_id")
 	private Employee employee;
 	
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate submissionDate;
 	
 	@Column(length = 20)
@@ -39,15 +39,15 @@ public class Appraisalforms {
 	
 	@ManyToOne
 	@JoinColumn(name="reviewer_id")
-    private int reviewer;
+    private Employee reviewer;
 
 	public Appraisalforms() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Appraisalforms(String formId, Employee employee, LocalDate submissionDate, int rating, String comments,
-			int reviewer) {
+	public Appraisalforms(int formId, Employee employee, LocalDate submissionDate, int rating, String comments,
+			Employee reviewer) {
 		super();
 		this.formId = formId;
 		this.employee = employee;
@@ -57,11 +57,11 @@ public class Appraisalforms {
 		this.reviewer = reviewer;
 	}
 
-	public String getFormId() {
+	public int getFormId() {
 		return formId;
 	}
 
-	public void setFormId(String formId) {
+	public void setFormId(int formId) {
 		this.formId = formId;
 	}
 
@@ -97,11 +97,11 @@ public class Appraisalforms {
 		this.comments = comments;
 	}
 
-	public int getReviewer() {
+	public Employee getReviewer() {
 		return reviewer;
 	}
 
-	public void setReviewer(int reviewer) {
+	public void setReviewer(Employee reviewer) {
 		this.reviewer = reviewer;
 	}
 
@@ -112,6 +112,6 @@ public class Appraisalforms {
 	}
 	
 	
-	
-	
 }
+
+	

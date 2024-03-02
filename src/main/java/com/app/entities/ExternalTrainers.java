@@ -30,8 +30,7 @@ public class ExternalTrainers {
 	@Column(length = 30)
 	private String gender;
 
-	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Column(length = 30)
 	private LocalDate dateOfBirth;
 
 	@Column(length = 30,unique = true)

@@ -35,16 +35,16 @@ public class Payroll {
 	private int salaryYear;
 	
 	@Column(length = 20)
-	private BigDecimal basicSalary;
+	private double basicSalary;
 	
 	@Column(length = 20)
-	private BigDecimal allowance;
+	private  double allowance;
 	
 	@Column(length = 20)
-	private BigDecimal deduction;
+	private double deduction;
 	
 	@Column(length = 20)
-	private BigDecimal netSalary;
+	private double netSalary;
 	
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -55,8 +55,8 @@ public class Payroll {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Payroll(int payroleId, Employee employee, String salaryMonth, int salaryYear, BigDecimal basicSalary,
-			BigDecimal allowance, BigDecimal deduction, BigDecimal netSalary, LocalDate paymentDate) {
+	public Payroll(int payroleId, Employee employee, String salaryMonth, int salaryYear, double basicSalary,
+			double allowance, double deduction, double netSalary, LocalDate paymentDate) {
 		super();
 		this.payroleId = payroleId;
 		this.employee = employee;
@@ -101,35 +101,35 @@ public class Payroll {
 		this.salaryYear = salaryYear;
 	}
 
-	public BigDecimal getBasicSalary() {
+	public double getBasicSalary() {
 		return basicSalary;
 	}
 
-	public void setBasicSalary(BigDecimal basicSalary) {
+	public void setBasicSalary(double basicSalary) {
 		this.basicSalary = basicSalary;
 	}
 
-	public BigDecimal getAllowance() {
+	public double getAllowance() {
 		return allowance;
 	}
 
-	public void setAllowance(BigDecimal allowance) {
+	public void setAllowance(double allowance) {
 		this.allowance = allowance;
 	}
 
-	public BigDecimal getDeduction() {
+	public double getDeduction() {
 		return deduction;
 	}
 
-	public void setDeduction(BigDecimal deduction) {
+	public void setDeduction(double deduction) {
 		this.deduction = deduction;
 	}
 
-	public BigDecimal getNetSalary() {
+	public double getNetSalary() {
 		return netSalary;
 	}
 
-	public void setNetSalary(BigDecimal netSalary) {
+	public void setNetSalary(double netSalary) {
 		this.netSalary = netSalary;
 	}
 
@@ -148,5 +148,5 @@ public class Payroll {
 				+ ", deduction=" + deduction + ", netSalary=" + netSalary + ", paymentDate=" + paymentDate + "]";
 	}
 	
-	
 }
+

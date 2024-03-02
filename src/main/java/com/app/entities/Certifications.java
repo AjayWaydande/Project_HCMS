@@ -32,7 +32,7 @@ public class Certifications {
 
 	@Column(length = 30)
 	private String certificationAuthority;
-
+	
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate issueDate;
